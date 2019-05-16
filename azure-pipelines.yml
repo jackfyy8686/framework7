@@ -16,6 +16,11 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
+- task: AzureWebApp@1
+  inputs:
+    appName: 
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    deploymentMethod: 'auto'
     npm install
     npm run build
   displayName: 'npm install and build'
